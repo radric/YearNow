@@ -2,4 +2,6 @@
     <string name="app_name">YearNow</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="widget_text">dumb text dumb text dumb text dumb text dumb text dumb text dumb text dumb text dumb text</string>
+    <string name="widget_name">YearWidget</string>
 </resources>

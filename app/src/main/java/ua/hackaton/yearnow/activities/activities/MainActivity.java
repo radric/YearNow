@@ -1,24 +1,27 @@
 package ua.hackaton.yearnow.activities.activities;
 
-import android.graphics.Color;
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
+import android.widget.RemoteViews;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
-import android.os.Handler;
 
 import ua.hackaton.yearnow.R;
 import ua.hackaton.yearnow.activities.adapters.ViewPagerAdapter;
+import ua.hackaton.yearnow.activities.widgets.YearWidgetProvider;
 
 
 public class MainActivity extends ActionBarActivity {
 
-
+    private SharedPreferences mSettings;
     private TextView time_now, year_now;
     private Handler mHandler = new Handler();
     public static ViewPager mDetailPager;
@@ -44,6 +47,9 @@ public class MainActivity extends ActionBarActivity {
         year_now = (TextView) findViewById(R.id.year_now_textview);
 
         mHandler.postDelayed(runnable, 0);
+
+        //Hardcoded widget updating
+        updateWidget("Dumb heading", "Dumb summary Dumb summary Dumb summary Dumb summary Dumb summary ");
     }
 
     private Runnable runnable = new Runnable() {
@@ -87,6 +93,30 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void openYearsJson(){
+
+    }
+
+    private void updateWidget(String heading, String summary) {
+        if(heading != null && summary != null) {
+
+            ComponentName thisWidget = new ComponentName(getApplicationContext(),
+                    YearWidgetProvider.class);
+
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this
+                    .getApplicationContext());
+
+            RemoteViews views = new RemoteViews(
+                    thisWidget.getPackageName(),
+                    R.layout.widgetlayout_background);
+
+            views.setTextViewText(R.id.textView_storyHeading, heading);
+            views.setTextViewText(R.id.textView_storySummary, summary);
+
+            appWidgetManager.updateAppWidget(
+                    new ComponentName(this.getPackageName(),
+                    YearWidgetProvider.class.getName()),
+                    views);
+        }
 
     }
 }
