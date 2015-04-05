@@ -11,52 +11,75 @@
     android:paddingRight="24dp"
     android:paddingTop="12dp" >
 
-    <TextView
-        android:id="@+id/textView_storyHeading"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:shadowColor="#FFFFFF"
-        android:shadowDx="2.2"
-        android:shadowDy="2.2"
-        android:shadowRadius="1"
-        android:singleLine="true"
-        android:text="..."
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:typeface="serif" />
+        android:layout_height="fill_parent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
 
-    <TextView
-        android:id="@+id/textView_storySummary"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView_storyHeading"
-        android:ellipsize="none"
-        android:hint="..."
-        android:scrollHorizontally="false"
-        android:shadowColor="#FFFFFF"
-        android:shadowDx="1.2"
-        android:shadowDy="1.2"
-        android:shadowRadius="1"
-        android:singleLine="false"
-        android:textColor="#000000"
-        android:textSize="14sp"
-        android:typeface="serif"
-        android:width="100dp"/>
+        <TextView
+            android:id="@+id/textView_year"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="2.2"
+            android:shadowDy="2.2"
+            android:shadowRadius="1"
+            android:singleLine="true"
+            android:text="00:00:00"
+            android:textColor="#000000"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:typeface="serif"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textIsSelectable="true" />
 
-    <ImageView
-        android:id="@+id/GradientBar"
-        android:contentDescription=""
-        android:layout_width="fill_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/overlay"
-        android:orientation="vertical" />
+        <TextView
+            android:id="@+id/textView_time"
+            android:layout_width="fill_parent"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView_year"
+            android:ellipsize="none"
+            android:hint="..."
+            android:scrollHorizontally="false"
+            android:shadowColor="#FFFFFF"
+            android:shadowDx="1.2"
+            android:shadowDy="1.2"
+            android:shadowRadius="1"
+            android:singleLine="false"
+            android:textColor="#000000"
+            android:textSize="30dp"
+            android:typeface="serif"
+            android:width="100dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="0000" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:id="@+id/textView_title"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:id="@+id/textView_description"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="25dp"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
 
 
 </RelativeLayout>

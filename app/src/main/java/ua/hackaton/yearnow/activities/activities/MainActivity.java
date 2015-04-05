@@ -60,7 +60,7 @@ public class MainActivity extends ActionBarActivity {
         mHandler.postDelayed(runnable, 0);
 
         //Hardcoded widget updating
-        updateWidget("Dumb heading", "Dumb summary Dumb summary Dumb summary Dumb summary Dumb summary ");
+        
 
     }
 
@@ -107,8 +107,8 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    private void updateWidget(String heading, String summary) {
-        if (heading != null && summary != null) {
+    private void updateWidget(String time, String year, String title, String description) {
+        if (time != null && year != null) {
 
             ComponentName thisWidget = new ComponentName(getApplicationContext(),
                     YearWidgetProvider.class);
@@ -120,8 +120,10 @@ public class MainActivity extends ActionBarActivity {
                     thisWidget.getPackageName(),
                     R.layout.widgetlayout_background);
 
-            views.setTextViewText(R.id.textView_storyHeading, heading);
-            views.setTextViewText(R.id.textView_storySummary, summary);
+            views.setTextViewText(R.id.textView_year, time);
+            views.setTextViewText(R.id.textView_storySummary, year);
+            views.setTextViewText(R.id.textView_title, title);
+            views.setTextViewText(R.id.textView_description, description);
 
             appWidgetManager.updateAppWidget(
                     new ComponentName(this.getPackageName(),
