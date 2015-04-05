@@ -28,6 +28,13 @@
 
         </LinearLayout>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Button"
+        android:id="@+id/button_widget_TTS"
+        android:onClick="onTtsButtonClick"/>
+
     <android.support.v4.view.ViewPager
     android:id="@+id/detail_viewpager"
     android:layout_width="match_parent"
@@ -45,6 +52,6 @@
         android:layout_marginRight="10dp"/>
 
 
-    </LinearLayout>
+</LinearLayout>
 
 
