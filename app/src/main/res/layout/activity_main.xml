@@ -10,48 +10,27 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="10dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:background="@android:drawable/dark_header">
         <TextView
             android:id="@+id/time_now_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="time now"
             android:textColor="#fff"
-            android:textSize="40sp"/>
+            android:textSize="50sp"/>
         <TextView
             android:id="@+id/year_now_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="year now"
             android:textColor="#fff"
-            android:textSize="22sp"/>
+            android:textSize="30sp"/>
 
         </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button_widget_TTS"
-        android:onClick="onTtsButtonClick"/>
 
     <android.support.v4.view.ViewPager
     android:id="@+id/detail_viewpager"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
-
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity"
-        tools:ignore="MergeRootFrame"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"/>
-
-
-</LinearLayout>
+    </LinearLayout>
 
 
